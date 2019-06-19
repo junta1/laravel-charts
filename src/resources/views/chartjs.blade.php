@@ -31,9 +31,9 @@
                 ['Sleep', 6]
             ]);
             var options = {
-                title: 'My Daily Activities',
+                title: 'Minhas atividades do dia',
             };
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
             chart.draw(data, options);
         }
     </script>
