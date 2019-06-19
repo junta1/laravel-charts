@@ -54,4 +54,4 @@ It's hard to avoid file permission issues when fiddling about with containers du
 
   * Run composer outside of the php container, as doing so would install all your dependencies owned by `root` within your vendor folder.
   * Run commands (ie Symfony's console, or Laravel's artisan) straight inside of your container. You can easily open a shell as described above and do your thing from there.
-# laravel-excel
+# laravel-charts
