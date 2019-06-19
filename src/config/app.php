@@ -177,6 +177,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //Charts
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
+
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+
+        Barryvdh\Snappy\ServiceProvider::class,
     ],
 
     /*
@@ -226,6 +232,14 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+        //Charts
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
+
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
+
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
     ],
 
 ];

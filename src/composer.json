@@ -6,7 +6,14 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "barryvdh/laravel-snappy": "^0.4.4",
+        "consoletvs/charts": "6.*",
         "fideloper/proxy": "~3.3",
+        "h4cc/wkhtmltoimage-amd64": "0.12.x",
+        "h4cc/wkhtmltoimage-i386": "0.12.x",
+        "h4cc/wkhtmltopdf-amd64": "0.12.x",
+        "h4cc/wkhtmltopdf-i386": "0.12.x",
+        "khill/lavacharts": "3.1.*",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "maatwebsite/excel": "^2.1.0"

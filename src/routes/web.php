@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/relatorio', function () {
     return view('relatorio.index');
 });
+
+Route::get('/chartPdf', 'ChartController@index');

@@ -6,13 +6,13 @@ services:
 
     mysql:
       image: mysql:5.7
-      container_name: laravel-excel-mysql
+      container_name: laravel-charts-mysql
       working_dir: /application
       volumes:
        - ./infra/mysql:/var/lib/mysql
       environment:
               - MYSQL_ROOT_PASSWORD=root
-              - MYSQL_DATABASE=db_laravel_excel
+              - MYSQL_DATABASE=db_laravel_charts
               - MYSQL_USER=root
               - MYSQL_PASSWORD=root
       ports:
@@ -20,7 +20,7 @@ services:
 
     webserver:
       image: nginx:alpine
-      container_name: laravel-excel-webserver
+      container_name: laravel-charts-webserver
       working_dir: /application
       volumes:
           - ./src:/application
@@ -30,7 +30,7 @@ services:
 
     php-fpm:
       build: infra/php-fpm
-      container_name: laravel-excel-php-fpm
+      container_name: laravel-charts-php-fpm
       working_dir: /application
       volumes:
         - ./src:/application
