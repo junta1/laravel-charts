@@ -22,14 +22,20 @@
             });
         }
         function drawCharts() {
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Coding', 11],
-                ['Eat', 1],
-                ['Commute', 2],
-                ['Looking for code Problems', 4],
-                ['Sleep', 6]
-            ]);
+
+            var dados = <?php  echo $dados; ?>;
+
+            // var data = google.visualization.arrayToDataTable([
+            //     ['Task', 'Hours per Day'],
+            //     ['Coding', 11],
+            //     ['Eat', 1],
+            //     ['Commute', 2],
+            //     ['Looking for code Problems', 4],
+            //     ['Sleep', 6]
+            // ]);
+
+            var data = google.visualization.arrayToDataTable(dados);
+
             var options = {
                 title: 'Minhas atividades do dia',
             };
@@ -42,5 +48,7 @@
 <body onload="init()">
 <div id="piechart" class="pie-chart"></div>
 </body>
+
+{{--{!! dd($dados) !!}--}}
 
 </html>

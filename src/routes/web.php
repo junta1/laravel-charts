@@ -19,4 +19,4 @@ Route::get('/relatorio', function () {
     return view('relatorio.index');
 });
 
-Route::get('/chartPdf', 'ChartController@index');
+Route::get('charts','ChartController@index');
