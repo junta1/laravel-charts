@@ -38,7 +38,10 @@
 
             var options = {
                 title: 'Minhas atividades do dia',
+                vAxis: {title: 'Lado esquerdo'},
+                hAxis: {title: 'Embaixo'},
             };
+
             var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
             chart.draw(data, options);
         }
