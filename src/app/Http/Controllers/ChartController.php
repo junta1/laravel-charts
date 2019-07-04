@@ -35,7 +35,6 @@ class ChartController extends Controller
         $result[] = ['Ano','Cliques','Visualizações'];
 
         foreach ($visitor as $key => $value) {
-
             $result[++$key] = [(string)$value->year, (int)$value->total_click, (int)$value->total_viewer];
         }
 
