@@ -20,3 +20,7 @@ Route::get('/relatorio', function () {
 });
 
 Route::get('charts','ChartController@index');
+
+Route::get('/linha', function () {
+    return view('linha');
+});
