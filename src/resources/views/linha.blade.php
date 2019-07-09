@@ -6,42 +6,40 @@
         // Load Charts and the corechart package.
         google.charts.load('current', {'packages':['corechart']});
 
-        // Draw the pie chart for Sarah's pizza when Charts is loaded.
-        google.charts.setOnLoadCallback(drawSarahChart);
+        //Carrega o gráfico
+        google.charts.setOnLoadCallback(linhaCurva);
+        google.charts.setOnLoadCallback(coluna);
 
-        // Draw the pie chart for the Anthony's pizza when Charts is loaded.
-        google.charts.setOnLoadCallback(drawAnthonyChart);
+        function coluna() {
 
-        // Callback that draws the pie chart for Sarah's pizza.
-        function drawSarahChart() {
-
-            // Create the data table for Sarah's pizza.
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Topping');
-            data.addColumn('number', 'Slices');
-            data.addRows([
-                ['Mushrooms', 1],
-                ['Onions', 1],
-                ['Olives', 2],
-                ['Zucchini', 2],
-                ['Pepperoni', 1]
+            //Dados
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Coding', 11],
+                ['Eat', 1],
+                ['Commute', 2],
+                ['Looking for code Problems', 4],
+                ['Sleep', 6]
             ]);
 
-            // Set options for Sarah's pie chart.
-            var options = {title:'How Much Pizza Sarah Ate Last Night',
-                width:400,
-                height:300};
+            //Personalizações
+            var options = {
+                title: 'Minhas atividades do dia',
+                vAxis: {title: 'Lado esquerdo'},
+                hAxis: {title: 'Embaixo'},
+                width:600,
+                height:400
+            };
 
-            // Instantiate and draw the chart for Sarah's pizza.
-            var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
             chart.draw(data, options);
         }
 
-        // Callback that draws the pie chart for Anthony's pizza.
-        function drawAnthonyChart() {
+        function linhaCurva() {
 
+            //Dados
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses'],
+                ['Year', 'Vendas', 'Despesas'],
                 ['2004',  1000,      400],
                 ['2005',  1170,      460],
                 ['2006',  660,       1120],
@@ -49,9 +47,11 @@
             ]);
 
             var options = {
-                title: 'Company Performance',
+                title: 'Desempenho da Empresa',
                 curveType: 'function',
-                legend: { position: 'bottom' }
+                legend: { position: 'bottom' },
+                width:600,
+                height:400
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
@@ -64,7 +64,7 @@
 <!--Table and divs that hold the pie charts-->
 <table class="columns">
     <tr>
-        <td><div id="Sarah_chart_div" style="border: 1px solid #ccc"></div></td>
+        <td><div id="piechart" style="border: 1px solid #ccc"></div></td>
         <td><div id="curve_chart" style="border: 1px solid #ccc"></div></td>
     </tr>
 </table>
