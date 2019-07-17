@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="pt-br">
 <head>
+    <title>Gráficos colunas + linha</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -39,19 +41,19 @@
 
             //Dados
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Vendas', 'Despesas'],
-                ['2004',  1000,      400],
-                ['2005',  1170,      460],
-                ['2006',  660,       1120],
-                ['2007',  1030,      540]
+                ['Grupos', 'Previsto', 'Executado'],
+                ['MÊS 01',  75,      72],
+                ['MÊS 02',  100,      92],
+                ['MÊS 03',  75,       75],
+                ['MÊS 04',  65,      65]
             ]);
 
             var options = {
-                title: 'Desempenho da Empresa',
+                title: 'Cronograma',
                 curveType: 'function',
                 legend: { position: 'bottom' },
-                width:600,
-                height:400
+                width:700,
+                height:500
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
